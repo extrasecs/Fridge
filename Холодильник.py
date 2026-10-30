@@ -3,7 +3,7 @@ from decimal import Decimal
 
 DATE_FORMAT = '%Y-%m-%d'
 
-goods = {}
+items = {}
 
 
 def add(items, title, amount, expiration_date=None):
@@ -51,38 +51,7 @@ def amount(items, needle):
     return total
 
 
-#Функции ниже я закомментировал, тк часть из них не является частью задания, хотелось просто сделать вывод покрасивее. 
-#Закомментировал и тестирование(на случй автоматической проверки)
-
-
-# Функции для красивого вывода
-# def show_fridge(items):
-#     print('В холодильнике лежит:')
-#     for title in items:
-#         print(f'{title}:')
-#         for batch in items[title]:
-#             if batch['expiration_date'] is None:
-#                 date_text = 'срок годности не указан'
-#             else:
-#                 date_text = 'годен до ' + batch['expiration_date'].strftime('%d.%m.%Y')
-#             print(f'  - {batch["amount"]}, {date_text}')
-
-
-# def show_find(items, needle):
-#     found = find(items, needle)
-#     if found:
-#         print(f'По запросу "{needle}" найдено: {", ".join(found)}')
-#     else:
-#         print(f'По запросу "{needle}" ничего не найдено')
-
-
-# def show_amount(items, needle):
-#     total = amount(items, needle)
-#     if total == 0:
-#         print(f'Продукта "{needle}" в холодильнике нет')
-#     else:
-#         print(f'Всего "{needle}": {total}')
-
+#Закомментировал тестирование(на случй автоматической проверки)
 
 # Тестирование
 # today = datetime.date.today()
@@ -90,28 +59,28 @@ def amount(items, needle):
 # tomorrow = (today + datetime.timedelta(days=1)).strftime(DATE_FORMAT)
 # in_100_years = today.replace(year=today.year + 100).strftime(DATE_FORMAT)
 
-# add(goods, 'Яйца', Decimal('10'), '2023-9-30')
-# add(goods, 'Яйца', Decimal('3'), '2023-10-15')
-# add(goods, 'Вода', Decimal('2.5'))
-# add(goods, 'Молоко', Decimal('1'), yesterday)
-# add(goods, 'Молоко', Decimal('2'), tomorrow)
-# add(goods, 'Сыр', Decimal('0.3'), in_100_years)
+# add(items, 'Яйца', Decimal('10'), '2023-9-30')
+# add(items, 'Яйца', Decimal('3'), '2023-10-15')
+# add(items, 'Вода', Decimal('2.5'))
+# add(items, 'Молоко', Decimal('1'), yesterday)
+# add(items, 'Молоко', Decimal('2'), tomorrow)
+# add(items, 'Сыр', Decimal('0.3'), in_100_years)
 
-# add_by_note(goods, 'Яйца гусиные 4 2023-07-15')
-# add_by_note(goods, 'Пельмени Универсальные 0.5 2023-09-30')
-# add_by_note(goods, 'Пельмени Универсальные 2 2023-10-28')
-# add_by_note(goods, 'Морковь 5')
+# add_by_note(items, 'Яйца гусиные 4 2023-07-15')
+# add_by_note(items, 'Пельмени Универсальные 0.5 2023-09-30')
+# add_by_note(items, 'Пельмени Универсальные 2 2023-10-28')
+# add_by_note(items, 'Морковь 5')
 
-# show_fridge(goods)
-
-# print()
-# show_find(goods, 'яйц')
-# show_find(goods, 'Вода')
-# show_find(goods, 'мясо')
+# show_fridge(items)
 
 # print()
-# show_amount(goods, 'яйца')
-# show_amount(goods, 'пельмени')
-# show_amount(goods, 'морковь')
-# show_amount(goods, 'молоко')
-# show_amount(goods, 'рыба')
+# show_find(items, 'яйц')
+# show_find(items, 'Вода')
+# show_find(items, 'мясо')
+
+# print()
+# show_amount(items, 'яйца')
+# show_amount(items, 'пельмени')
+# show_amount(items, 'морковь')
+# show_amount(items, 'молоко')
+# show_amount(items, 'рыба')
